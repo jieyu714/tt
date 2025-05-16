@@ -62,10 +62,8 @@ async function import_data() {
 
             if (error) {
                 console.error('Error fetching data:', error);
-                return;
+                continue;
             }
-
-            console.log('Data fetched:', data);
 
             if (!monthly_data.has(`${years[year_idx]}_${months[month_idx]}`)) {
                 monthly_data.set(`${years[year_idx]}_${months[month_idx]}`, new Map());
